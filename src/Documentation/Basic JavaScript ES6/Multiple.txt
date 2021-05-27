@@ -1,0 +1,118 @@
+Previous functions used to be in below format :
+
+function function(){
+
+}
+
+Now arrow functions have been introduced
+const myFunc = () => {
+
+}
+
+It can also hold arguments
+const myFunc = (arguments) => {
+
+}
+when we use arrow functions , this keyword becomes simple and it will keep it's context.
+
+Example : 
+
+***Normal function
+function myFunc(name){
+  console.log(name);
+}
+
+myFunc('Rajat')
+
+*** Arrow function
+const newFunc = (name) => {
+  console.log(name)
+}
+
+newFunc('Rajat gupta')
+
+
+*******************************************************************************************
+export and imports
+*******************************************************************************************
+
+New Js also provides us option to export
+Example :
+
+const person = {
+  name: 'Rajat'
+}
+
+export default person;
+
+We can do multiple export as well
+
+export const something = () => {....}
+
+export const somethingElse = 10;
+
+Then we can import them:
+import person;
+import {something} from './utility.js';
+import {somethingElse} from './utility.js' ;
+
+ - default keyword when is provided, while importing we can provide anything
+ - Named exports are like somethingElse and something, we have to provide what we exported.
+
+*******************************************************************************************
+Classes
+*******************************************************************************************
+Just like any other programming language, JS have Classes that have Properties and methods
+
+Class Person{
+  name = 'Rajat';
+
+  printname = (name) => {
+    console.log(name);
+  }
+}
+
+To instantiate the class :
+const myPerson = new Person();
+
+ Also support Inheritance.
+ class Person extends Master;
+
+ Example :
+ class Geo{
+  constructor(){
+    this.parent = 'geo';
+  }
+  
+  printparent(){
+    console.log(this.parent);
+  }
+}
+
+class Rectangle extends Geo{
+  constructor() {
+    super();
+    this.height = 10;
+    this.width = 10;
+  }
+  calcArea() {
+    console.log(this.height);
+  }
+}
+
+const square = new Rectangle();
+
+square.calcArea();
+square.printparent();
+
+
+In ES7 it becomes even more simpler :
+
+class Rectangle{
+  height = 10;
+  width = 10;
+
+  area = () => {
+    height * width;
+  }
+}
