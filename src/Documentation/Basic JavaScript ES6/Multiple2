@@ -1,0 +1,58 @@
+********************************************************************************************************
+Spread and Rest Operators
+********************************************************************************************************
+
+operator is "..."
+We call these 3 dots as Spread or Rest depending on where it is used
+
+Spread - Used to split up array elements OR Object properties.
+    Example :
+    We have a old array named  : oldArray and we want to create a new array having all elements of Old array and 1,2 elements added to them
+    newArray = [...oldArray,1,2]
+    These 3 dots will pull out all elements from old array and put it into new array.
+    newObject = {...oldObject, newProperty:5}
+    Here new object will have all the properties from the oldObject and a new newProperty with value 5, if the oldObject had a property named
+    newProperty , it will be overridden by our i.e. 5
+
+Rest - Used to merge a list of function arguments into an array
+    Example :
+    function sortArgs(...args){
+        return args.sort()
+    }
+    sortArgs recieves a number of arguments, and ...args combines them into an array and sorts them.
+
+
+********************************************************************************************************
+Destructuring
+********************************************************************************************************
+
+Easily extracts array alements or object properties into variables.
+
+Destructuring and array  - 
+    Example :
+    [a,b] = ['Max',1]
+    console.log(a)
+    console.log(b)
+    a will print Max
+    b will print 1
+
+Object Destructuring : 
+    Example :
+    {name, age} = {'Max',28}
+    console.log(name) will print Max
+    console.log(age) will print 28
+
+********************************************************************************************************
+Array Functions
+********************************************************************************************************
+    Consider an array const numbers = [1,2,3]
+    Filter() :::
+    Suppose I want to print only 1 
+        numbers.filter(num => num === 1)
+    Map() :::
+    Suppose I want array with all elements doubled:
+        numbers.map((num) => {
+            return num*2;
+        })
+        map returns a new array
+
