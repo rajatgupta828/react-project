@@ -1,0 +1,5 @@
+Let and Const : 
+- Let and Const are introduced in ES6 - JS
+- Use Let for Variables and Const for constants. 
+
+
