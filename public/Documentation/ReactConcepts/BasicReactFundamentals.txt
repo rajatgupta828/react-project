@@ -16,4 +16,3 @@ To Create a new Rect App :
     - We use create-react-app , which also provide a internal server which can be used. CRA runs on Node.js. Which uses Node.js for 
       internal server and optimizations as well.
     - npm start will start the server and will open localhost:3000 to view the application.
-

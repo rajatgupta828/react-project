@@ -1,8 +1,10 @@
-import Card from "./Card";
-import ExpenseItem from "./ExpenseItems";
-import './Expenses.css'
+import react from 'react';
 
-function Expenses(props) {
+import ExpenseItem from "./ExpenseItems";
+import Card from '../UIHandler/Card';
+import './Expenses.css';
+
+const Expenses = (props) => {
 
   return(
 

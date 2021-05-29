@@ -1,4 +1,5 @@
-import Expenses from './components/Expenses';
+import react from 'react';
+import Expenses from './components/ExpenseHandler/Expenses';
 
 function App() {
   console.log("Explaining the PROPS We are going to  create the array of expense and passing it on");

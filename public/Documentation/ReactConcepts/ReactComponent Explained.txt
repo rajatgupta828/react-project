@@ -21,6 +21,32 @@ JSX
 ******************************************************************************************
 
 JSX is HTML code embedded in Java script file.
+previously we needed to import react everywhere we wanted to define the JSX code.
+
+When we use JSX, react.createElement() method is called under the hood.
+ It takes 3 arguments
+    - First argument should be the element sthat should be created.
+    - Second argument is the object that configures this element.
+    - Third Arguments are - >  list of argument which takes the code that should be between the opening and closing tags.
+
+
+******************************************************************************************
+Writing functions in JSX
+******************************************************************************************
+1.  Normal function
+    function App(){
+        return(
+            .... Your code here
+        );
+    }
+
+2. We can use Arrow functions as well just like any other Java script
+
+    const App = () => {
+        return(
+            .... Your code here
+        );
+    }
 
 ******************************************************************************************
 Working of React
@@ -28,3 +54,9 @@ Working of React
 It compares the DOM with the previous DOM and repaints the DOM again and again.
 
 Building the big user Inerface from smaller interfaces is called as composition.
+
+
+**************************************************************************************************************************
+React State
+**************************************************************************************************************************
+

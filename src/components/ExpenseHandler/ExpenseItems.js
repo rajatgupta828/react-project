@@ -1,8 +1,8 @@
 import './ExpenseItems.css';
 import ExpenseDate from './ExpenseDate';
-import Card from './Card';
+import Card from '../UIHandler/Card';
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
 
     return (
         <Card className="expense-item">
