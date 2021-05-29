@@ -1,0 +1,42 @@
+Children is a reserved name for Props.
+
+Suppose we want to Apply a common CSS for all the childern components, what we can do, we can create a new component :
+
+    import './Card.css';
+
+
+    function Card(props) {
+        const classes = 'card ' + props.className;
+        return(
+            <div className = {classes}>{props.children}</div>
+        );
+    }
+
+export default Card;
+
+Then we can use that 
+
+    import './ExpenseItems.css';
+    import ExpenseDate from './ExpenseDate';
+    import Card from './Card';
+
+    function ExpenseItem(props) {
+
+        return (
+            <Card className="expense-item">
+                <ExpenseDate date={props.date}/>
+                <div className="expense-item__description">
+                    <h2>{props.title}</h2>
+                    <div className="expense-item__price">{props.amount}</div>
+                </div>
+            </Card>
+        );
+    }
+
+    export default ExpenseItem;
+
+Here props.childern is the one which would pass everything that is present in between that
+opening and closing  tags of the custom component where it is needed.
+
+
+

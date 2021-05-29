@@ -1,0 +1,19 @@
+What are react components  : 
+
+    - React is basically made up of components.
+    - We can say that react components are basic building blocks of user Inerface that can be used again and again.
+    - Components are basically HTML/CSS/JS all together or any combinations.
+    - Components can have many components.
+    - Provides us Usability and Seperation on concerns.
+
+How react Code is written :
+    - Components are reactive.
+    - Uses Declarative approach.
+    - Underwhich conditions DOM should be updated -  we just tell this, rest React will do it.
+
+To Create a new Rect App :
+    - Install Node.js.
+    - We use create-react-app , which also provide a internal server which can be used. CRA runs on Node.js. Which uses Node.js for 
+      internal server and optimizations as well.
+    - npm start will start the server and will open localhost:3000 to view the application.
+

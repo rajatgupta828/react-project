@@ -1,0 +1,21 @@
+- Package.json file holds all the dependencies.
+- src folder contains the real code.
+- Npm install will install all the required dependencies into the project.
+- At the very beginning, index.js is loaded at the first, infact that is the 
+
+index.js file   
+    - Basically when we do npm start, it transforms the index.js files. Basically that's first file that will be loaded.
+    - We can not import css in .js file, but in react Js files we can, that tells the server to include that CSS in entire application
+    - react and react-dom libraries together basically form the react.
+    - Render method is called to display the web page.
+    - document.getElementById('root') is the default JS DOM object. Basically it getElementById method is called on index.html
+      file that is present in the public folder and that is the main file that is loaded. That is why it becomes SPA.
+    - Index.html file has only one div => root which is used by index.js file.
+    - So 
+        ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+        document.getElementById('root')
+        );
+    code basically tells that render <App /> component instead of div <root> present in index.js file.

@@ -1,0 +1,30 @@
+ - React components are basically a function.
+ - Those functions are basically just rendering something, it can be HTML as well.
+    function App() {
+        return (
+            <div className="App">
+            <header className="App-header">
+                <h1>Let's Get Started</h1>
+            </header>
+            </div>
+        );
+        }
+
+        export default App;
+- We can then Import App and use them as and when needed.
+- This is basically called as JSX, special syntax that is created by react team which can be decoded.
+
+
+
+******************************************************************************************
+JSX
+******************************************************************************************
+
+JSX is HTML code embedded in Java script file.
+
+******************************************************************************************
+Working of React
+******************************************************************************************
+It compares the DOM with the previous DOM and repaints the DOM again and again.
+
+Building the big user Inerface from smaller interfaces is called as composition.

@@ -1,0 +1,23 @@
+- We can transfer data from one component to another component using Props.
+- Components can not use data present in another components and hence we need to use Props.
+- We can pass the data to another component using attributes and then later that attributes can be used to break down and used.
+
+Syntax : 
+    Syntax to pass on the Props are as below :
+    <ExpenseItem title='title' amount='amount' date='date' />
+
+Recieving Attributes values in the target component :
+    When the target component is loaded, it will have 1 parameter which will be object which will hold all the data that
+    is being sent to the target parameter.
+
+    Syntax : 
+        function ExpenseItem(props){   
+            ...
+        }
+        We have named it data here, but we can name it whatever we want.
+
+        We can then use it whatever we needed as below
+        
+
+
+
