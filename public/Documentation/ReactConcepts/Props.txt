@@ -20,5 +20,57 @@ Recieving Attributes values in the target component :
         
 Passing Data from Child to Parent (Bottoms Up) :
 
+Passing data is as same as 
+    here consider input as a component whihc react provides us, where we pass on some props, and one special prop : onChange
+    we needs function as a value, and react element adds a listner to this.
+    <div className='new-expense__control'>
+        <label>Date</label>
+        <input type='date' min="2019-01-01" value={enteredDate} max="2021-12-31" onChange={dateChangeHandler} />
+    </div>
+
+    We can create our own even props - 
+
+    IF we want to pass data , ut will be same as onChange event, we will have to define the onchange like method in the parent
+    like below :
+
+    Step 1 :
+    add the Function to the parent class :
+        const NewExpense = () => {
+
+        const saveExpenseDataHandler = (enteredExpenseData) => {
+            const expenseData = {
+                ...enteredExpenseData,
+                id:Math.random().toString()
+            }
+        };
+
+        return(
+            <div className="new-expense">
+            <ExpenseForm onSaveExpenseData/>
+            </div>
+        );
+
+    Step 2:
+    *** Use the function to recieve the data :
+        ExpenseForm will expect props now :
+
+        const ExpenseForm = (props) => {
+    
+    *** and then when we submit the form, we will execute this new function :  onSaveExpenseData, like below :
+        const formSubmitHandler = (event) => {
+        event.preventDefault();
+
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        };
+
+        props.onSaveExpenseData(expenseData);
+        setenteredDate('');
+        setEnteredTitle('');
+        setenteredAmount('');
+    };
+
 
 
