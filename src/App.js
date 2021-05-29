@@ -1,5 +1,6 @@
 import react from 'react';
 import Expenses from './components/ExpenseHandler/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
   console.log("Explaining the PROPS We are going to  create the array of expense and passing it on");
@@ -31,6 +32,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
+        <NewExpense />
         <Expenses items={expenses}/>
       </header>
     </div>

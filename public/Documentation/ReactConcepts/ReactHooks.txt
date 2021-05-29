@@ -5,4 +5,10 @@ useState Hook
     - useState sets default value for the component in which it is being called.
     - For each instance, there will be a state and useState will set up a value for each one of them.
     - Only that component instace is being  called, only that will be re-evaulated.
+    - calling useState we tell react to manage value
+    - always returns array of 2 elements
+        - 1. Value of current state of item.
+        - 2. Method to update that value.
+    - When the component has been loaded for the first time only then useState will initialize the variable, else it will realiz
+    that this state has been already initialized and we don't need to initialize it again.
     - 

@@ -18,6 +18,7 @@ Recieving Attributes values in the target component :
 
         We can then use it whatever we needed as below
         
+Passing Data from Child to Parent (Bottoms Up) :
 
 
 

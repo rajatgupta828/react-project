@@ -106,3 +106,41 @@ Then we can use it :
 
 Simply, if we have data that changes and that needs the UI to be changed, we would need the state. Regular variables will
 not help us.
+
+React State can be updated in many ways, useState hook is just 1 of them
+    ---------------------------------------------------------------------------------
+    Handling Multiple States
+    ---------------------------------------------------------------------------------
+    We can have multiple state components and we can have multiple useState() statements.
+    these statements will be all seperate from one another.
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setenteredAmount] = useState('');
+    const [enteredDate, setenteredDate] = useState('');
+
+    We can also have 1 state , which will have all 3 states, and that's personal preference.
+
+    To define that :
+
+    To set :
+    const [userInput, setUserInput] = useState({
+        enteredTitle : '',
+        enteredAmount : '',
+        enteredDate :''
+    });
+
+    /*
+    To set state new if title changes ---
+    */
+   const titleChangeHandler = (event) => {
+        // Updating single state
+        // setEnteredTitle(event.target.value);
+
+        //Updating all state together
+        setUserInput((prevState) => {
+           return  {...prevState,enteredTitle: event.target.value}
+        });
+    };
+
+    We pass on prevState as a value because , the react schedules the updates and optimizes it as per it's own comfort and sometimes
+    that might not happen immediately and hence we need the previous state to update instanteneously.
+    
