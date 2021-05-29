@@ -55,8 +55,54 @@ It compares the DOM with the previous DOM and repaints the DOM again and again.
 
 Building the big user Inerface from smaller interfaces is called as composition.
 
+**************************************************************************************************************************
+Making React reactive
+**************************************************************************************************************************
+handling the changes, we need to define the button for example :
+    <button>Change Title</button>
+Instead of writing in a reactive way :
+    document.getElementById('button').addEventListner()
+What we can do is :
+    in the JSX element we can have on.. props, like onClick, and many more and these on.. methods need a function that needs to
+    be executed 
+    <button onClick={() => {console.log('Clicked !')}}>Change Title</button>
+    This fucntion can be on the fly or can be defined as well. Below is exmaple of it defined later
+    <button onClick={() => {titleClick}}>Change Title</button>
+    If a element has a event, it's handler can be added.
+
 
 **************************************************************************************************************************
 React State
 **************************************************************************************************************************
+All react components are functions and we never call it, so someone has to call it. react calls it.
+When Custom components are called that is the time when under the hood, react calls our component functions and returns what ever that
+function returns.
+Later all the JSX is transformed to HTML and is transformed to webpge.
+React never re-loads on it's own , and we need to tell react that something has changed and it needs to be reloaded.
+That is where state comes into picture.
 
+
+Click changes, variable changes do not cause the function to run again.
+
+We can define useState in our function , which is React hook, there are many other hooks, they start with ** use **
+and all of these hooks must be called inside the component fucntions.
+
+We can pass arguments to useState variable, for example if we need the react hook to be changed based on props.title variable,
+we can pass that in the useState variable.
+useState(props.title)
+
+useState default variable will need the component function to be called again.
+
+useState returns a array, where the first element is variable itself, second element is a method to update the variable as we
+can not update the variables just like normal variable, so it can be named as below :
+
+const [title, setTitle] = useState(props.title);
+
+Then we can use it :
+    const titleClickHandler = () => {
+        setTitle('Updated Title');
+        console.log(title);
+    };
+
+Simply, if we have data that changes and that needs the UI to be changed, we would need the state. Regular variables will
+not help us.

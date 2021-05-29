@@ -1,0 +1,8 @@
+**************************************************************************************************
+useState Hook
+**************************************************************************************************
+
+    - useState sets default value for the component in which it is being called.
+    - For each instance, there will be a state and useState will set up a value for each one of them.
+    - Only that component instace is being  called, only that will be re-evaulated.
+    - 
