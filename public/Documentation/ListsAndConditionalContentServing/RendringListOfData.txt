@@ -1,0 +1,52 @@
+To loop through items in React, we can use built in Java methods, for example map() method in this case.
+ So if a array is defined as below :
+
+    const expenses = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 300,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 14662,
+      date: new Date(2021, 2, 28),
+    }]
+
+    we can code as below :
+
+    {expenses.map(expense =>
+        <ExpenseItem title={expense.title} date={expense.date} amount={expense.amount} />
+    )}
+
+Using lists as state :
+  Define the stateful lists
+    const [expenses, setExpenses] = useState(DUMMY_EXPENSES);   *** DUMMY_EXPENSES is already defined array, we can keep empty as well
+
+  Then to update it we can use code like below to update state depending on the previous state :
+    const addExpenseHandler = (expense) => {
+    setExpenses((prevState) => {
+        return [expense, ...expenses]
+    });
+    console.log(expenses);
+  };
+
+
+***** keys in react lists *****
+  We can add key to the array because then the array will not have to be re-arranged completely, instead the array can be
+  told what is the item number with the key.
+  <ExpenseItem key= {expense.id} title={expense.title} date={expense.date} amount={expense.amount} />
+
+  This ID can be uniqely generated.
+  So key is very important concept that should be added and we should not skip it at all.
+
+
+**** Filtering the lists *****
+const filteredArray = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
+

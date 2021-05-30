@@ -1,11 +1,9 @@
-import react from 'react';
+import react, { useState } from 'react';
 import Expenses from './components/ExpenseHandler/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
-  console.log("Explaining the PROPS We are going to  create the array of expense and passing it on");
-
-  const expenses = [
+  const DUMMY_EXPENSES = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -27,9 +25,13 @@ function App() {
     },
   ];
 
-  const addExpenseHandler = (expense) =>{
-    console.log("In App.JS");
-    console.log(expense);
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevState) => {
+        return [expense, ...expenses]
+    });
+    console.log(expenses);
   };
 
 
@@ -38,7 +40,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NewExpense onAddExpense={addExpenseHandler} />
-        <Expenses items={expenses}/>
+        <Expenses items={expenses} />
       </header>
     </div>
   );

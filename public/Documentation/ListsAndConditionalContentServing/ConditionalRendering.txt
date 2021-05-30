@@ -1,0 +1,3 @@
+We can do conditional rendering based on the conditions.
+
+Suppose we want to render a list that is empty and we want to give an error message in that case, we can code that as below :
