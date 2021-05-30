@@ -143,4 +143,15 @@ React State can be updated in many ways, useState hook is just 1 of them
 
     We pass on prevState as a value because , the react schedules the updates and optimizes it as per it's own comfort and sometimes
     that might not happen immediately and hence we need the previous state to update instanteneously.
-    
+
+
+State is not necessary all the times.
+
+We can also pass on the values for 2 ay binding using value parameters, we we use the value from states and update the values from the state as well
+
+In this case, where we have 2 way bingings, the state is called as controlled component, we can pass the data to parent and we can
+get the data into parent from child.
+All the components that have states are called as stateful comnponents and some components will not manage state, hence 
+they will be called as Stateless components.
+
+

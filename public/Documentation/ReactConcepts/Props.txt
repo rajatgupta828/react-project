@@ -73,4 +73,9 @@ Passing data is as same as
     };
 
 
+State is not necessary all the times.
+
+We can also pass on the values for 2 ay binding using value parameters, we we use the value from states and update the values from the state as well
+
+
 
