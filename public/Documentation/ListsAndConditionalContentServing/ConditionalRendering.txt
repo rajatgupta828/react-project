@@ -1,3 +1,48 @@
+*********************************************************************************************************
+Conditional Rendering of JSX code
+*********************************************************************************************************
+
 We can do conditional rendering based on the conditions.
 
 Suppose we want to render a list that is empty and we want to give an error message in that case, we can code that as below :
+    {filteredArray.length === 0 && <p className = "para-in-card">There are no expenses to current year</p>}
+    {filteredArray.length > 0 && filteredArray.map(expense =>
+        <ExpenseItem key={expense.id} title={expense.title} date={expense.date} amount={expense.amount} />
+    )}
+
+We can also code this using the JSX logic to define it as variables :
+    let expensesContent = <p className='para-in-card'>  There are no expenses to current year </p>
+
+    if(filteredArray.length > 0){
+        expensesContent = filteredArray.map(expense =>
+        <ExpenseItem key={expense.id} title={expense.title} date={expense.date} amount={expense.amount} />);
+
+    and then we can use variables as JSX code as below :
+        return (
+            <div>
+            <Card className='expenses'>
+                <ExpenseFilter selected={filteredYear} onFilterDates={filterDatesHandler} />
+                {expensesContent}
+            </Card>
+            </div>
+
+        );
+
+*********************************************************************************************************
+Coditional Return Statements
+*********************************************************************************************************
+if(props.items.length === 0){
+        return(expensesContent)
+    }
+
+    return (
+        <div>
+            <ul className="expenses-list">
+                {props.items.map(expense =>
+                    <ExpenseItem key={expense.id} title={expense.title} date={expense.date} amount={expense.amount} />
+                )}
+            </ul>
+        </div>);
+};
+
+In this code we are returning different JSX in different conditions, when entire JSX can change, we can use this approach.

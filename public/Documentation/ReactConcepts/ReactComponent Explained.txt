@@ -30,6 +30,16 @@ When we use JSX, react.createElement() method is called under the hood.
     - Third Arguments are - >  list of argument which takes the code that should be between the opening and closing tags.
 
 
+We can store JSX content in the variables as well :
+    For example :
+
+        let expensesContent = <p> No expense found </p>
+
+    and then we can use it :
+        
+
+
+
 ******************************************************************************************
 Writing functions in JSX
 ******************************************************************************************
