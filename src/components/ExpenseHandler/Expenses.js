@@ -5,6 +5,7 @@ import Card from '../UIHandler/Card';
 import './Expenses.css';
 import ExpenseFilter from './ExpenseFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
 
@@ -23,6 +24,7 @@ const Expenses = (props) => {
       <li>
       <Card className='expenses'>
         <ExpenseFilter selected={filteredYear} onFilterDates={filterDatesHandler} />
+        <ExpensesChart expenses={filteredArray}/>
         <ExpensesList items={filteredArray} />
       </Card>
       </li>  

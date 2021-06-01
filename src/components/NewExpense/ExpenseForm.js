@@ -8,6 +8,7 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setenteredAmount] = useState('');
     const [enteredDate, setenteredDate] = useState('');
+    const [showForm, setshowForm] = useState(true);
 
     // Updating Single state
 
@@ -60,7 +61,28 @@ const ExpenseForm = (props) => {
         setenteredDate('');
         setEnteredTitle('');
         setenteredAmount('');
+        setshowForm(true);
     };
+
+    const addExpenseHandler = (event) => {
+        event.preventDefault();
+        setshowForm(false);
+    }
+
+    const cancelButtonHandler = (event) => {
+        event.preventDefault();
+        setshowForm(true);
+    }
+
+    if(showForm){
+        return(
+            <form onSubmit={addExpenseHandler}>
+                <div className="new-expense__action">
+                <button type='submit'>Add New Expense</button>
+            </div>
+            </form>
+        )
+    }
 
     return (
         <form onSubmit={formSubmitHandler}>
@@ -84,6 +106,7 @@ const ExpenseForm = (props) => {
             </div>
             <div className="new-expense__action">
                 <button type='submit'>Add Expense</button>
+                <button type='button' onClick={cancelButtonHandler}>Cancel</button>
             </div>
         </form>
     );
